@@ -1,3 +1,11 @@
+# HelloCS Leson 4
+
+By the end of this lesson you should be able to:
+* Use Linq on the args array (or any array)
+* Understand where the .exe is placed
+  * and args
+* Put functionality in a proc
+
 # HelloCS Lesson 3
 
 By the end of this lesson you should be able to:

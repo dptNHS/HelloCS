@@ -19,25 +19,12 @@ namespace HelloCS
             }
             else
             {
-                var timesheetDays = new List<TimesheetDay>();
                 foreach (var file in files)
                 {
-                    timesheetDays.AddRange(ReadFile(file));
+                    var wally = ReadFile(file).FirstOrDefault(td => td.Name == "Wally");
+                    Console.WriteLine("{0} worked {1} hours", wally.Name, wally.Hours);
                 }
                 //got all timesheet days
-
-                Console.WriteLine("People in order of hours worked, descending");
-
-                timesheetDays
-                    .OrderByDescending(t => (t.Hours))
-                    .ToList()
-                    .ForEach(tday =>
-                    Console.WriteLine(
-                        String.Format("{0} {1}",
-                        tday.Name,
-                        tday.Hours)
-                    )
-                );
 
             }
 
@@ -49,6 +36,7 @@ namespace HelloCS
             var timesheetDays = new List<TimesheetDay>();
             foreach (var line in lines)
             {
+                Console.WriteLine(line);
                 var cells = line.Split(',');
                 var name = cells[0];
                 var hours = cells[1];
@@ -74,10 +62,11 @@ namespace HelloCS
                         NormalPay = (decimal)(hourz * 17.55),
                         Overtime = (decimal)(overtime * 17.55 + 1.5)
                     };
-                    timesheetDays.Add(td);
+                    //timesheetDays.Add(td);
+                    yield return td;
                 }
             }
-            return timesheetDays;
+            //return timesheetDays;
         }
     }
 }

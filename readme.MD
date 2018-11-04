@@ -1,4 +1,9 @@
-# HelloCS Leson 4
+# HelloCS Lesson 5
+
+By the end of this lesson you should be able to 
+* Use the Yield statement
+
+# HelloCS Lesson 4
 
 By the end of this lesson you should be able to:
 * Use Linq on the args array (or any array)
@@ -14,3 +19,4 @@ By the end of this lesson you should be able to:
 * Read data into numeric values (TryParse)
 * Read data into a class
 * Use Linq operators on your array of that class
+* Debug a C# program using Visual Studio and Console.WriteLine
